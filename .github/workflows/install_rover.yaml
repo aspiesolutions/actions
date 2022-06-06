@@ -7,7 +7,7 @@ on:
         required: true
 
 jobs:
-  environment: apollo
+  # environment: apollo
   env:
     APOLLO_KEY: ${{secrets.APOLLO_KEY}}
     APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
