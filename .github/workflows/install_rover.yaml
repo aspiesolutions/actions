@@ -1,0 +1,18 @@
+name: Install Apollo Rover
+
+on:
+  workflow_call:
+    secrets:
+      APOLLO_KEY:
+        required: true
+
+jobs:
+  environment: apollo
+  env:
+    APOLLO_KEY: ${{secrets.APOLLO_KEY}}
+    APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
+  steps:
+    - name: Install Rover
+      run: |
+        curl -sSL https://rover.apollo.dev/nix/v0.1.0 | sh
+        echo "$HOME/.rover/bin" >> $GITHUB_PATH
