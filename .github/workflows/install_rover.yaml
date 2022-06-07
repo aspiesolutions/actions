@@ -25,6 +25,9 @@
 
 name: Install Apollo Rover
 
+on:
+
+
 inputs:
   apollo_key:
     required: true
