@@ -25,8 +25,7 @@
 
 name: Install Apollo Rover
 
-on:
-
+on: [push, pull_request]
 
 inputs:
   apollo_key:
