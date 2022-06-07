@@ -9,7 +9,8 @@ on:
 jobs:
   # environment: apollo
   install_rover:
-    runs-on: ubuntu-latest
+    runs:
+      using: "composite"
     env:
       APOLLO_KEY: ${{secrets.APOLLO_KEY}}
       APOLLO_VCS_COMMIT: ${{ github.event.pull_request.head.sha }}
